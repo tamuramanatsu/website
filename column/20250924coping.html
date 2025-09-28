@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>20250924コーピングリストをhtmlとjavascriptで作ってみる</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/column2.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../favicon.ico">
+  <!-- OGP設定 -->
+    <meta property="og:title" content="20250924コーピングリストをhtmlとjavascriptで作ってみる">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/header002.jpg">
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        thead th {
+            background-color: #e0e0e0;
+            cursor: pointer;
+            position: relative;
+        }
+        /* 並び替えの矢印アイコン */
+        thead th::after {
+            content: '↕';
+            position: absolute;
+            right: 15px;
+            color: #999;
+        }
+        thead th.sort-asc::after {
+            content: '▲';
+        }
+        thead th.sort-desc::after {
+            content: '▼';
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover {
+            background-color: #e9f5ff;
+        }
+        
+    </style>
+</head>
+<body class="fade-in">
+    <!-- サイドバー -->
+    <div class="sidebar">
+        <ul>
+            <li class="sideLink sideLinkTop">
+                <a href="../index.htm">
+                    トップ
+                </a>
+            </li>
+            <li class="sideLink sideLinkColumn">
+                <a href="../column.html">
+                    コラム／日記
+                </a>
+            </li>
+            <li class="sideLink sideLinkBook">
+                <a href="../book.html">
+                    出した本
+                </a>
+            </li>
+            <li class="sideLink sideLinkEvent">
+                <a href="../event.html">
+                    イベント情報
+                </a>
+            </li>
+            <li class="sideLink sideLinkForm">
+                <a href="../form.html">
+                    お問い合わせ
+                </a>
+            </li>
+        </ul>
+    </div>
+<!-- メインカラム -->
+    <div class="mainColumn">
+        <div class="mainColumnList">
+            <h1>
+                20250924コーピングリストをhtmlとjavascriptで作ってみる
+            </h1>
+            <hr>
+            <div>
+                <div class="ColumnBodyList">
+                    <img src="images/header002.jpg" alt="20250924" class="ColumnHeader">
+                    
+                    <pre>
+せっかくホームページを作ったなら、htmlとかcssとかjavascriptとかやりたいじゃないですか。やりたいですね。
+ヘッダー画像は1999年のWEBページっぽいものを選んできました。書いている内容はAIに考えてもらいました。
+                    </pre>
+        <div class="mainColumnList">
+            <h1>コーピングリスト</h1>
+        </div>
+    <table id="copingTable">
+        <thead>
+            <tr>
+                <th>コーピング内容</th>
+                <th>感じた効果 (10段階)</th>
+                <th>メモ</th>
+            </tr>
+        </thead>
+        <!-- ★★★ ここからがデータ ★★★ -->
+        <tbody>
+            <tr>
+                <td>温かいハーブティーを飲む</td>
+                <td>8</td>
+                <td>カモミールが一番落ち着く。はちみつを入れると喉にも良い。</td>
+            </tr>
+            <tr>
+                <td>子猫のお腹を撫でる</td>
+                <td>10</td>
+                <td>ゴロゴロ音は最高の癒やし。すべてを忘れられる。</td>
+            </tr>
+            <tr>
+                <td>好きな音楽を聴きながら散歩</td>
+                <td>7</td>
+                <td>元気な時じゃないとできないけど、気分転換には一番。</td>
+            </tr>
+            <tr>
+                <td>5分だけ瞑想する</td>
+                <td>6</td>
+                <td>雑念は浮かぶけど、終わった後は少し頭がスッキリする。</td>
+            </tr>
+        </tbody>
+        <!-- ★★★ データはここまで ★★★ -->
+    </table>
+                </div>
+            </div>
+    <div class="ColumnBodyList">
+                    <pre>
+デジタル版作っておいてあれですけど、これは多分紙の手帳やメモなどに残しておいた方がいいタイプのものかもしれない。
+筆跡が残るのがいいと思います。筆跡はそのときの焦り具合や緊張も伝わってくるので、「これくらいのストレスの時にこのコーピングを使ったらこうだったんだ」ってイメージをするのに手助けになる気がする。
+でもできてよかったです。勉強になりました。
+                    </pre>
+    </div>
+            <div class="ColumnBodyList">
+                <a href="../column.html">■戻る</a>
+            </div>
+        </div>
+    </div>
+
+<script>
+  window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+  });
+</script>
+
+<!-- 並び替え機能のプログラム-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const table = document.getElementById('copingTable');
+        const headers = table.querySelectorAll('th');
+        const tbody = table.querySelector('tbody');
+
+        headers.forEach((header, index) => {
+            header.addEventListener('click', () => {
+                // 現在のソート状態を取得
+                const isAsc = header.classList.contains('sort-asc');
+                // 他のヘッダーのソートクラスを削除
+                headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+                // ソート方向を決定
+                if (isAsc) {
+                    header.classList.add('sort-desc');
+                } else {
+                    header.classList.add('sort-asc');
+                }
+
+                sortTableByColumn(index, !isAsc);
+            });
+        });
+
+        function sortTableByColumn(columnIndex, asc = true) {
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const dirModifier = asc ? 1 : -1;
+
+            const sortedRows = rows.sort((a, b) => {
+                const aColText = a.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
+                const bColText = b.querySelector(`td:nth-child(${columnIndex + 1})`).textContent.trim();
+                
+                // 2列目（効果）は数値として比較、それ以外は文字列として比較
+                if (columnIndex === 1) {
+                    return (Number(aColText) - Number(bColText)) * dirModifier;
+                } else {
+                    return aColText.localeCompare(bColText, 'ja') * dirModifier;
+                }
+            });
+
+            // DOMから既存の行を削除
+            while (tbody.firstChild) {
+                tbody.removeChild(tbody.firstChild);
+            }
+
+            // ソートされた行を再追加
+            tbody.append(...sortedRows);
+        }
+    });
+</script>
+
+</body>
+</html>
