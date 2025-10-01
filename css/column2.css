@@ -27,3 +27,12 @@ pre {
   width: 80%;             /* ページ幅の60%に設定 */
   max-width: 1000px;       /* 最大幅を600pxまでに制限 */
 }
+
+sup a {
+  font-size: 0.5em;
+}
+
+ol.footnotes {
+  font-size: 0.5em;
+  margin-top: 1em;
+}
