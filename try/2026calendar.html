@@ -4,57 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026年カレンダー</title>
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="icon" href="../favicon.ico">
 <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .calendar {
+                box-shadow: none;
+            }
+        }
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            padding: 5px;
             background-color: #f5f5f5;
         }
         .calendar {
             background-color: white;
             border-collapse: collapse;
             width: 100%;
-            max-width: 1200px;
             margin: 0 auto;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 9px;
         }
         .calendar th, .calendar td {
             border: 1px solid #ddd;
-            padding: 8px 12px;
+            padding: 2px 4px;
             text-align: left;
-            min-width: 120px;
-            height: 30px;
+            height: 16px;
         }
         .calendar th {
             background-color: #f8f8f8;
             font-weight: normal;
             text-align: center;
+            font-size: 8px;
         }
         .calendar .year-header {
             background-color: white;
             font-weight: bold;
             text-align: left;
-            padding-left: 15px;
+            padding-left: 10px;
+            font-size: 14px;
         }
         .calendar .year-header .note {
-            font-size: 10px;
+            font-size: 7px;
             font-weight: normal;
-            margin-left: 20px;
+            margin-left: 15px;
+        }
+        .calendar .year-header .note a {
+            color: #0066cc;
+            text-decoration: none;
         }
         .calendar .month-cell {
             background-color: #f8f8f8;
             font-weight: bold;
             text-align: center;
-            min-width: 40px;
+            width: 25px;
+            font-size: 8px;
         }
         .calendar .saturday {
             color: #0066cc;
         }
         .calendar .sunday {
+            color: #cc0000;
+        }
+        .calendar .holiday {
             color: #cc0000;
         }
         .calendar td:first-child {
@@ -89,7 +103,7 @@
             <td class="prev-month">29</td>
             <td class="prev-month">30</td>
             <td class="prev-month">31</td>
-            <td>1</td>
+            <td class="holiday">1</td>
             <td>2</td>
             <td class="saturday">3</td>
             <td class="sunday">4</td>
@@ -106,7 +120,7 @@
         </tr>
         <tr>
             <td class="month-cell"></td>
-            <td>12</td>
+            <td class="holiday">12</td>
             <td>13</td>
             <td>14</td>
             <td>15</td>
@@ -148,7 +162,7 @@
             <td class="month-cell"></td>
             <td>9</td>
             <td>10</td>
-            <td>11</td>
+            <td class="holiday">11</td>
             <td>12</td>
             <td>13</td>
             <td class="saturday">14</td>
@@ -166,7 +180,7 @@
         </tr>
         <tr>
             <td class="month-cell">03</td>
-            <td>23</td>
+            <td class="holiday">23</td>
             <td>24</td>
             <td>25</td>
             <td>26</td>
@@ -200,7 +214,7 @@
             <td>17</td>
             <td>18</td>
             <td>19</td>
-            <td>20</td>
+            <td class="holiday">20</td>
             <td class="saturday">21</td>
             <td class="sunday">22</td>
         </tr>
@@ -258,7 +272,7 @@
             <td class="month-cell">05</td>
             <td>27</td>
             <td>28</td>
-            <td>29</td>
+            <td class="holiday">29</td>
             <td>30</td>
             <td>1</td>
             <td class="saturday">2</td>
@@ -266,9 +280,9 @@
         </tr>
         <tr>
             <td class="month-cell"></td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
+            <td class="holiday">4</td>
+            <td class="holiday">5</td>
+            <td class="holiday">6</td>
             <td>7</td>
             <td>8</td>
             <td class="saturday">9</td>
@@ -376,7 +390,7 @@
         </tr>
         <tr>
             <td class="month-cell"></td>
-            <td>20</td>
+            <td class="holiday">20</td>
             <td>21</td>
             <td>22</td>
             <td>23</td>
@@ -407,7 +421,7 @@
         <tr>
             <td class="month-cell"></td>
             <td>10</td>
-            <td>11</td>
+            <td class="holiday">11</td>
             <td>12</td>
             <td>13</td>
             <td>14</td>
@@ -466,9 +480,9 @@
         </tr>
         <tr>
             <td class="month-cell"></td>
-            <td>21</td>
-            <td>22</td>
-            <td>23</td>
+            <td class="holiday">21</td>
+            <td class="holiday">22</td>
+            <td class="holiday">23</td>
             <td>24</td>
             <td>25</td>
             <td class="saturday">26</td>
@@ -496,7 +510,7 @@
         </tr>
         <tr>
             <td class="month-cell"></td>
-            <td>12</td>
+            <td class="holiday">12</td>
             <td>13</td>
             <td>14</td>
             <td>15</td>
@@ -527,7 +541,7 @@
         <tr>
             <td class="month-cell"></td>
             <td>2</td>
-            <td>3</td>
+            <td class="holiday">3</td>
             <td>4</td>
             <td>5</td>
             <td>6</td>
@@ -556,7 +570,7 @@
         </tr>
         <tr>
             <td class="month-cell"></td>
-            <td>23</td>
+            <td class="holiday">23</td>
             <td>24</td>
             <td>25</td>
             <td>26</td>
@@ -616,10 +630,5 @@
         </tr>
     </table>
 </body>
-<script>
-  window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-  });
-</script>
 
 </html>
