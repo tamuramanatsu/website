@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -16,7 +16,16 @@
 <body class="fade-in">
     <!-- サイドバー -->
     <div class="sidebar">
-        <ul>
+        
+        <!-- モバイル用ハンバーガーボタン -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- メニューリスト -->
+        <ul id="menu-list">
             <li class="sideLink sideLinkTop">
                 <a href="index.htm">
                     トップ
@@ -44,6 +53,7 @@
             </li>
         </ul>
     </div>
+    
     <!-- メインカラム -->
     <div class="mainColumn">
         <div class="mainColumnTop">
@@ -69,24 +79,73 @@
                     </div>
                     <div class="topInfoItem">
                         <div>
+                            2026.4.3
+                        </div>
+                        <div class="topInfoItemBody">
+                            <div>
+                                <a href="column/20260403geppo.html">コラム「月報（少し告知も）」を更新しました。</a><span class="textEmphasized">New!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topInfoItem">
+                        <div>
                             2025.9.20
                         </div>
                         <div class="topInfoItemBody">
                             <div>
-                                公式サイトを開設しました。<span class="textEmphasized">New!</span>
+                                公式サイトを開設しました。
                             </div>
-
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 <script>
+  // ページ読み込み時のフェードイン
   window.addEventListener('load', function() {
     document.body.classList.add('loaded');
   });
-</script>
 
+  // ハンバーガーメニューの制御
+  function toggleMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuList = document.getElementById('menu-list');
+    const sidebar = document.querySelector('.sidebar');
+    
+    menuToggle.classList.toggle('active');
+    menuList.classList.toggle('active');
+    sidebar.classList.toggle('menu-open');
+  }
+
+  // メニュー項目がクリックされたときにメニューを閉じる
+  document.querySelectorAll('.sideLink a').forEach(link => {
+    link.addEventListener('click', function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menuList = document.getElementById('menu-list');
+      const sidebar = document.querySelector('.sidebar');
+      
+      menuToggle.classList.remove('active');
+      menuList.classList.remove('active');
+      sidebar.classList.remove('menu-open');
+    });
+  });
+
+  // オーバーレイをクリックしたときにメニューを閉じる
+  document.addEventListener('click', function(e) {
+    const sidebar = document.querySelector('.sidebar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    
+    if (!sidebar.contains(e.target) && sidebar.classList.contains('menu-open')) {
+      const menuList = document.getElementById('menu-list');
+      
+      menuToggle.classList.remove('active');
+      menuList.classList.remove('active');
+      sidebar.classList.remove('menu-open');
+    }
+  });
+</script>
 
 </body>
 </html>
