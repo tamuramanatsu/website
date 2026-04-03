@@ -37,12 +37,16 @@
 
     .sideLink{
         font-size: 0.9rem;
+        flex: 1;
+        text-align: center;
     }
 
     .sideLink a {
-        display: inline-block;
+        display: block;
         position: static;
-        width: 7rem;
+        width: 100%;
+        padding: 4px 2px;
+        word-break: keep-all;
     }
 
     .sideLink::marker {
