@@ -24,8 +24,8 @@
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
-  width: 80%;             /* ページ幅の60%に設定 */
-  max-width: 1000px;       /* 最大幅を600pxまでに制限 */
+  width: 80%;             /* ページ幅の80%に設定 */
+  max-width: 1000px;       /* 最大幅を1000pxまでに制限 */
 }
 
 sup a {
