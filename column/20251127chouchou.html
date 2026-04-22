@@ -18,7 +18,7 @@
 </head>
 <body class="fade-in">
     <!-- サイドバー -->
-    <div class="sidebar">
+    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
         <ul>
             <li class="sideLink sideLinkTop">
                 <a href="../index.htm">
@@ -32,7 +32,7 @@
             </li>
             <li class="sideLink sideLinkBook">
                 <a href="../book.html">
-                    出した本
+                    書籍一覧／購入
                 </a>
             </li>
             <li class="sideLink sideLinkEvent">
@@ -48,7 +48,7 @@
         </ul>
     </div>
 <!-- メインカラム -->
-    <div class="mainColumn">
+    <div class="mainColumn" role="main">
         <div class="mainColumnList">
             <h1>
                 20251127我流で因縁のシュシュを編む
@@ -56,10 +56,10 @@
             <hr>
             <div>
                 <div class="ColumnBodyList">
-                    <img src="images/header011.jpg" title="20251127我流で因縁のシュシュを編む" class="ColumnHeader">                    
+                    <img src="images/header011.jpg" alt="20251127我流で因縁のシュシュを編む" title="20251127我流で因縁のシュシュを編む" class="ColumnHeader">                    
                     <pre>
 「シュシュ」というヘアアクセサリーがある。元々は束ねた髪の毛を装飾するヘアアクセサリーだが、最近はスマホショルダーとして使っている人もちらほら見かけるようになってきた。
-<img src="images/20251127_02.jpg" title="フランフランのスマホホルダー" class="enlargeable-img" style="width: 80%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
+<img src="images/20251127_02.jpg" alt="フランフランのスマホホルダー" title="フランフランのスマホホルダー" class="enlargeable-img" style="width: 80%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
 ▲ Francfrancのサイトから引用（閲覧日：2025年11月26日）。これはチュール生地のようだ。
 商品ページはこちら⇒<a href="https://francfranc.com/products/1106090064706">https://francfranc.com/products/1106090064706</a>
 
@@ -70,7 +70,7 @@
 
 創作の良いところは、さまざまな選択肢があることだ。かぎ針編みに挫折してから2ヶ月ほど後に、わたしは性懲りもなく棒編みを始めた。そして6月には縫い物のスピードをあげたくなって、ミシンを手に入れた。そのあたりから、どんどん創作スピードが上がっていった。物が作れると、自信がつくようになってくる。自信がつくと、ちょっとした失敗でもへこたれない。そして11月も後半に入り、突然ひらめいた。「今のわたしなら、因縁の『編み物としてのシュシュ』を作れるかもしれない！」。今度は教本は開かなかった。我流の方法を思いついたのだ。その方法で30分ほど作業をしてみたら、なんと、できた！ そして翌日、忘れないように急いで下の図をかいた。
 
-<img src="images/20251127_01.jpg" title="我流のシュシュの作り方" class="enlargeable-img" style="width: 90%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
+<img src="images/20251127_01.jpg" alt="我流のシュシュの作り方" title="我流のシュシュの作り方" class="enlargeable-img" style="width: 90%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
 ▲ 我流のシュシュの作り方。
 
 要するに、編み物ではあるが、「縫い物としてのシュシュ」と同様に作ってみたのである。用意するのは輪になっていないゴム。反を縫い合わせ、そこにゴムを通して、最終的に輪に変形させる。「編み物としてのシュシュ」が立体を活かしてそのまま編み続けていく方法とすれば、「縫い物としてのシュシュ」は平面だったものを立体に組み上げていく方法。これは大きく異なる作業だ。
@@ -79,12 +79,12 @@
 <div style="display: flex; gap: 16px;">
   <div style="flex: 1; text-align: center;">
     <img src="images/20251127_03.jpg"
-         title="完成したシュシュ"
+         alt="完成したシュシュ" title="完成したシュシュ"
          style="width: 80%; height: auto; max-width: 100%;" cursor: zoom-in;">
   </div>
   <div style="flex: 1; text-align: center;">
     <img src="images/20251127_04.jpg"
-         title="シュシュの製作途中"
+         alt="シュシュの製作途中" title="シュシュの製作途中"
          style="width: 80%; height: auto; max-width: 100%;" cursor: zoom-in;">
   </div></div>
 
@@ -105,7 +105,7 @@
 <!---画像拡大表示用-->
 <div id="imgModal" class="modal">
   <span class="modal-close">&times;</span>
-  <img class="modal-content" id="modalImg">
+  <img alt="" class="modal-content" id="modalImg">
 </div>
 
 <style>
@@ -147,6 +147,7 @@ document.querySelectorAll('.enlargeable-img').forEach(img => {
     const modalImg = document.getElementById('modalImg');
     modal.style.display = "block";
     modalImg.src = this.src;
+    modalImg.alt = this.alt;
   });
 });
 

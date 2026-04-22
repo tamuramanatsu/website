@@ -15,14 +15,14 @@
 
 <body class="fade-in">
     <!-- サイドバー -->
-    <div class="sidebar">
+    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
         
         <!-- モバイル用ハンバーガーボタン -->
-        <div class="menu-toggle" onclick="toggleMenu()">
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu-list">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         
         <!-- メニューリスト -->
         <ul id="menu-list">
@@ -55,12 +55,12 @@
     </div>
     
     <!-- メインカラム -->
-    <div class="mainColumn">
+    <div class="mainColumn" role="main">
         <div class="mainColumnTop">
             <h1>
                 田村真夏(Tamura Manatsu)
             </h1>
-            <div class="topBody">
+        <div class="topBody">
                 <!-- 左エリア -->
                 <div class="topBodyLeft">
                     <img class="topProfileImg" src="src/top.png"  alt="田村真夏" style="width: 80%; height: auto;">
@@ -133,7 +133,9 @@
     const menuToggle = document.querySelector('.menu-toggle');
     const menuList = document.getElementById('menu-list');
     const sidebar = document.querySelector('.sidebar');
-    
+
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isExpanded));
     menuToggle.classList.toggle('active');
     menuList.classList.toggle('active');
     sidebar.classList.toggle('menu-open');
@@ -145,7 +147,8 @@
       const menuToggle = document.querySelector('.menu-toggle');
       const menuList = document.getElementById('menu-list');
       const sidebar = document.querySelector('.sidebar');
-      
+
+      menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.classList.remove('active');
       menuList.classList.remove('active');
       sidebar.classList.remove('menu-open');
@@ -156,10 +159,11 @@
   document.addEventListener('click', function(e) {
     const sidebar = document.querySelector('.sidebar');
     const menuToggle = document.querySelector('.menu-toggle');
-    
+
     if (!sidebar.contains(e.target) && sidebar.classList.contains('menu-open')) {
       const menuList = document.getElementById('menu-list');
-      
+
+      menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.classList.remove('active');
       menuList.classList.remove('active');
       sidebar.classList.remove('menu-open');

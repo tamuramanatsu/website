@@ -18,7 +18,7 @@
 </head>
 <body class="fade-in">
     <!-- サイドバー -->
-    <div class="sidebar">
+    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
         <ul>
             <li class="sideLink sideLinkTop">
                 <a href="../index.htm">
@@ -32,7 +32,7 @@
             </li>
             <li class="sideLink sideLinkBook">
                 <a href="../book.html">
-                    出した本
+                    書籍一覧／購入
                 </a>
             </li>
             <li class="sideLink sideLinkEvent">
@@ -48,7 +48,7 @@
         </ul>
     </div>
 <!-- メインカラム -->
-    <div class="mainColumn">
+    <div class="mainColumn" role="main">
         <div class="mainColumnList">
             <h1>
                 20251208初心者と熟練者が交錯する！はじめてのネクタイづくり（前編）
@@ -56,7 +56,7 @@
             <hr>
             <div>
                 <div class="ColumnBodyList">
-                    <img src="images/header013.jpg" title="20251208初心者と熟練者が交錯する！はじめてのネクタイづくり" class="ColumnHeader">                    
+                    <img src="images/header013.jpg" alt="20251208初心者と熟練者が交錯する！はじめてのネクタイづくり" title="20251208初心者と熟練者が交錯する！はじめてのネクタイづくり" class="ColumnHeader">                    
                     <pre>
 わたしは女性が着けるネクタイが大好きだ。わたしは女性にどんどんネクタイをつけてほしい。ネクタイは素晴らしい。美しさもさることながら、品があり、遊びが入れられる。素敵だ。
 
@@ -66,7 +66,7 @@
 仕立ての面からも魅力的な点がいくつもある。ネクタイはほとんどが直線からできており、直線から成り立つものは比較的簡単なものが多い。経験をそれなりに積んできた今ならできるかもしれないと思った。そして、せっかくなら自分の好きな生地で仕立ててみたかった。
 
 そして、作った。
-<img src="images/20251208_01.jpg" title="自作ネクタイ" class="enlargeable-img" style="width: 50%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
+<img src="images/20251208_01.jpg" alt="自作ネクタイ" title="自作ネクタイ" class="enlargeable-img" style="width: 50%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
 結論から言うと、ネクタイを作るのは非常に簡単だった。が、他の洋裁とは違う点で難しく感じる部分がいくつかあった。簡潔に言うと、裁縫熟練者が書いているレシピの解き方と、裁縫初心者が書いているレシピの解き方とにぶつかった。
 
 これからわたしは、このネクタイを作るまでに経た、裁縫熟練者と裁縫初心者のレシピを行ったり来たりしたはるかなる道のりを書いていく。もしネクタイを作りたくてこの文章を読んでいる人がいたら、わたしの道のりをそのままなぞるとおかしなことになるから、さっさと正解に進んでほしい。正解は「パタンナーの作った型紙を買うこと」である。わたしは女性がネクタイを着けているところをたくさん見たいのだ。
@@ -121,7 +121,7 @@
 <!---画像拡大表示用-->
 <div id="imgModal" class="modal">
   <span class="modal-close">&times;</span>
-  <img class="modal-content" id="modalImg">
+  <img alt="" class="modal-content" id="modalImg">
 </div>
 
 <style>
@@ -163,6 +163,7 @@ document.querySelectorAll('.enlargeable-img').forEach(img => {
     const modalImg = document.getElementById('modalImg');
     modal.style.display = "block";
     modalImg.src = this.src;
+    modalImg.alt = this.alt;
   });
 });
 

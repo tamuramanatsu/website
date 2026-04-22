@@ -18,7 +18,7 @@
 </head>
 <body class="fade-in">
     <!-- サイドバー -->
-    <div class="sidebar">
+    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
         <ul>
             <li class="sideLink sideLinkTop">
                 <a href="../index.htm">
@@ -32,7 +32,7 @@
             </li>
             <li class="sideLink sideLinkBook">
                 <a href="../book.html">
-                    出した本
+                    書籍一覧／購入
                 </a>
             </li>
             <li class="sideLink sideLinkEvent">
@@ -48,7 +48,7 @@
         </ul>
     </div>
 <!-- メインカラム -->
-    <div class="mainColumn">
+    <div class="mainColumn" role="main">
         <div class="mainColumnList">
             <h1>
                 20260403月報（少し告知も）
@@ -56,7 +56,7 @@
             <hr>
             <div>
                 <div class="ColumnBodyList">
-                    <img src="images/header017.jpg" title="20260403月報" class="ColumnHeader">
+                    <img src="images/header017.jpg" alt="20260403月報" title="20260403月報" class="ColumnHeader">
                     <pre>
 2026年3月の月報です。
 なんかおかしいな、と思ってよく見てみたら、2月の月報を書いていませんでした。なぜ？ と自分に問うてみたところ、「2月は30日以降がないから」と自堕落な己が言っておりました。はあ、なるほど。いつもは30日を過ぎたあたりから「書くか、月報」とエンジンをかけはじめるので、30日以降が存在しない2月はエンジンが入らなかった、という言い訳しているようです。とにかく3月の月報を書いていきます。
@@ -96,7 +96,7 @@
 <!---画像拡大表示用-->
 <div id="imgModal" class="modal">
   <span class="modal-close">&times;</span>
-  <img class="modal-content" id="modalImg">
+  <img alt="" class="modal-content" id="modalImg">
 </div>
 
 <style>
@@ -138,6 +138,7 @@ document.querySelectorAll('.enlargeable-img').forEach(img => {
     const modalImg = document.getElementById('modalImg');
     modal.style.display = "block";
     modalImg.src = this.src;
+    modalImg.alt = this.alt;
   });
 });
 
