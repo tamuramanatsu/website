@@ -6,6 +6,9 @@
         display: block;
     }
     .sidebar{
+        position: sticky;
+        top: 0;
+        z-index: 100;
         width: 100%;
         overflow-x: auto;
         height: auto;
@@ -42,6 +45,7 @@
         font-size: 0.9rem;
         flex: 1;
         text-align: center;
+        margin-bottom: 0;
     }
 
     .sideLink a {
