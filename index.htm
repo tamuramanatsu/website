@@ -1,154 +1,84 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8">
-    <title>田村真夏</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/top.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="icon" href="favicon.ico">
-    <meta name="description" content="物書き、田村真夏の公式サイトです。">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>田村真夏</title>
+<link rel="stylesheet" href="css/base.css">
 </head>
+<body>
 
-<body class="fade-in">
-    <!-- サイドバー -->
-    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
-        <ul>
-            <li class="sideLink sideLinkTop">
-                <a href="index.htm">
-                    トップ
-                </a>
-            </li>
-            <li class="sideLink sideLinkColumn">
-                <a href="column.html">
-                    コラム／日記
-                </a>
-            </li>
-            <li class="sideLink sideLinkBook">
-                <a href="book.html">
-                    書籍一覧／購入
-                </a>
-            </li>
-            <li class="sideLink sideLinkEvent">
-                <a href="event.html">
-                    イベント情報
-                </a>
-            </li>
-            <li class="sideLink sideLinkForm">
-                <a href="form.html">
-                    お問い合わせ
-                </a>
-            </li>
-        </ul>
-    </div>
-    
-    <!-- メインカラム -->
-    <div class="mainColumn" role="main">
-        <div class="mainColumnTop">
-            <h1>
-                田村真夏(Tamura Manatsu)
-            </h1>
-        <div class="topBody">
-                <!-- 左エリア -->
-                <div class="topBodyLeft">
-                    <img class="topProfileImg" src="src/top.png"  alt="田村真夏" style="width: 80%; height: auto;">
-                    <div class="topProfileItem">
-                        <div>
-                            <a href="profile.html">
-                                ■プロフィールはこちら
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- 右エリア -->
-                <div class="topBodyRight">
-                    <div class="topInfoHeader">
-                        更新情報
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2026.7.1
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                <a href="column/20260701geppo.html">コラム「彩りのほうへ：2026年6月の月報」を更新しました。</a><span class="textEmphasized">New!</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2026.6.19
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                <a href="column/20260619geppo.html">コラム「月報」を更新しました。</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2026.5.11
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                <a href="column/20260511geppo.html">コラム「月報」を更新しました。</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2026.4.20
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                <a href="column/20260420blender2.html">コラム「絵が描けない人間が、3DCGソフトblenderに挑戦してみる（２）」を更新しました。</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2026.4.16
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                <a href="book.html">書籍一覧／購入を作成しました。</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2026.4.3
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                <a href="column/20260403geppo.html">コラム「月報（少し告知も）」を更新しました。</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="topInfoItem">
-                        <div>
-                            2025.9.20
-                        </div>
-                        <div class="topInfoItemBody">
-                            <div>
-                                公式サイトを開設しました。
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<nav class="nav">
+  <a href="index.htm">トップ</a>
+  <a href="column.html">コラム</a>
+  <a href="book.html">書籍</a>
+  <a href="event.html">イベント</a>
+  <a href="profile.html">プロフィール</a>
+  <a href="form.html">お問い合わせ</a>
+</nav>
 
-<script>
-  // ページ読み込み時のフェードイン
-  window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-  });
-</script>
+<img class="band bandtop" src="column/images/header022.jpg" alt="">
+
+<div class="hero">
+  <p class="kicker">最新のコラム<span class="isnew">NEW</span></p>
+  <h1 class="ttl">かたまりを砕くように<br>7月の月報</h1>
+  <div class="meta">2026.08.05</div>
+  <p>　7月の月報です。</p>
+  <p>　これを読んでいる人の中で、Claude Codeを使っている人、いますか？　7月、Claude Codeがすごいことになっていましたよね。</p>
+  <p class="more"><a href="column/20260805geppo.html">続きを読む →</a></p>
+</div>
+
+<div class="wrap">
+
+  <p class="secttl">これまでのコラム</p>
+  <div class="idx">
+
+    <article>
+      <img loading="lazy" decoding="async" src="column/images/header021.jpg" alt="">
+      <div>
+        <div class="date">2026.07.01</div>
+        <h3><a href="column/20260701geppo.html">彩りのほうへ：2026年6月の月報</a></h3>
+      </div>
+    </article>
+
+    <article>
+      <img loading="lazy" decoding="async" src="column/images/header020.jpg" alt="">
+      <div>
+        <div class="date">2026.06.19</div>
+        <h3><a href="column/20260619geppo.html">月報</a></h3>
+      </div>
+    </article>
+
+    <article>
+      <img loading="lazy" decoding="async" src="column/images/header019.jpg" alt="">
+      <div>
+        <div class="date">2026.05.11</div>
+        <h3><a href="column/20260511geppo.html">月報</a></h3>
+      </div>
+    </article>
+
+  </div>
+  <p class="more"><a href="column.html">コラムをすべて見る →</a></p>
+
+  <p class="secttl">本</p>
+  <div class="books">
+    <div class="book">
+      <img class="cov" src="src/books/zatubunsyu.jpg" alt="" loading="lazy" decoding="async">
+      <div>
+        <div class="bt"><a href="book.html">雑文集　田村真夏</a></div>
+        <div class="bm">既刊 ／ ¥1,500</div>
+      </div>
+    </div>
+    <div class="book">
+      <div class="cov"></div>
+      <div>
+        <div class="bt"><a href="book.html">不完全な三角形</a></div>
+        <div class="bm">2026.11.8 文学フリマ東京43にて頒布</div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>

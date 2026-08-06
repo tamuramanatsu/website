@@ -1,99 +1,51 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8">
-    <title>プロフィール — 田村真夏</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロフィール｜田村真夏</title>
+<link rel="stylesheet" href="css/base.css">
 </head>
+<body>
 
-<body class="fade-in">
-    <!-- サイドバー -->
-    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
-        <ul>
-            <li class="sideLink sideLinkTop">
-                <a href="index.htm">
-                    トップ
-                </a>
-            </li>
-            <li class="sideLink sideLinkColumn">
-                <a href="column.html">
-                    コラム／日記
-                </a>
-            </li>
-            <li class="sideLink sideLinkBook">
-                <a href="book.html">
-                    書籍一覧／購入
-                </a>
-            </li>
-            <li class="sideLink sideLinkEvent">
-                <a href="event.html">
-                    イベント情報
-                </a>
-            </li>
-            <li class="sideLink sideLinkForm">
-                <a href="form.html">
-                    お問い合わせ
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- メインカラム -->
-    <div class="mainColumn" role="main">
-        <div class="mainColumnProfile">
-            <h1>
-                田村真夏のプロフィール
-            </h1>
-            <p class="profileBio">田村真夏（たむら・まなつ）。1992年生まれ。文筆活動をして生活している。妻と猫と共に暮らしている。</p>
-            <div class="profileBody">
-                <div class="profileBodyItem">
-                    <div class="profileBodyItemLabel">
-                        拠点
-                    </div>
-                    <div class="profileBodyItemValue">
-                        <div>
-                            東京都
-                        </div>
-                    </div>
-                </div>
-                <div class="profileBodyItem">
-                    <div class="profileBodyItemLabel">
-                        趣味
-                    </div>
-                    <div class="profileBodyItemValue">
-                        家政、レゴ
-                    </div>
-                </div>
-                <div class="profileBodyItem">
-                    <div class="profileBodyItemLabel">
-                        制作歴
-                    </div>
-                    <div class="profileBodyItemValue">
-                        <div>
-                            ・２０２４年１２月　太宰治賞　『リワークセンターＭＩＣＨＩＲＯ』
-                        </div>
-                        <div>
-                            ・２０２５年３月　新潮新人賞　『ミモザ』
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            その他、『雑文集　田村真夏』など、自主制作本も精力的に制作中。詳細は<a href="book.html">書籍一覧／購入</a>ページをご覧ください。
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<nav class="nav">
+  <a href="index.htm">トップ</a>
+  <a href="column.html">コラム</a>
+  <a href="book.html">書籍</a>
+  <a href="event.html">イベント</a>
+  <a href="profile.html">プロフィール</a>
+  <a href="form.html">お問い合わせ</a>
+</nav>
 
-<script>
-  window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-  });
-</script>
+<div class="wrap pagetop">
+
+  <h1 class="ttl">田村真夏のプロフィール</h1>
+
+  <div class="media">
+    <img src="src/profile.jpg" alt="田村真夏。白い壁を背に横を向いている、白黒の写真">
+    <div>
+
+      <p>田村真夏（たむら・まなつ）。1992年生まれ。文筆活動をして生活している。妻と猫と共に暮らしている。</p>
+
+      <dl>
+        <dt>拠点</dt>
+        <dd>東京都</dd>
+
+        <dt>趣味</dt>
+        <dd>家政、レゴ</dd>
+
+        <dt>制作歴</dt>
+        <dd>
+          <p>・２０２４年１２月　太宰治賞　『リワークセンターＭＩＣＨＩＲＯ』</p>
+          <p>・２０２５年３月　新潮新人賞　『ミモザ』</p>
+          <p>その他、『雑文集　田村真夏』など、自主制作本も精力的に制作中。詳細は<a href="book.html">書籍</a>ページをご覧ください。</p>
+        </dd>
+      </dl>
+
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>

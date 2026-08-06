@@ -1,174 +1,64 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <title>20260224絵が描けない人間が、3DCGソフトblenderに挑戦してみる（１）</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/column2.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="icon" href="../favicon.ico">
-  <!-- OGP設定 -->
-    <meta property="og:title" content="20260224絵が描けない人間が、3DCGソフトblenderに挑戦してみる（１）">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tamuramanatsu.github.io/website/column/images/header016.jpg">
-    <meta property="og:url" content="https://tamuramanatsu.github.io/website/column/20260224blender.html">
-    <meta name="twitter:card" content="summary_large_image">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>絵が描けない人間が、3DCGソフトblenderに挑戦してみる（１）｜田村真夏</title>
+<link rel="stylesheet" href="../css/base.css">
 </head>
-<body class="fade-in">
-    <!-- サイドバー -->
-    <div class="sidebar" role="navigation" aria-label="メインナビゲーション">
-        <ul>
-            <li class="sideLink sideLinkTop">
-                <a href="../index.htm">
-                    トップ
-                </a>
-            </li>
-            <li class="sideLink sideLinkColumn">
-                <a href="../column.html">
-                    コラム／日記
-                </a>
-            </li>
-            <li class="sideLink sideLinkBook">
-                <a href="../book.html">
-                    書籍一覧／購入
-                </a>
-            </li>
-            <li class="sideLink sideLinkEvent">
-                <a href="../event.html">
-                    イベント情報
-                </a>
-            </li>
-            <li class="sideLink sideLinkForm">
-                <a href="../form.html">
-                    お問い合わせ
-                </a>
-            </li>
-        </ul>
-    </div>
-<!-- メインカラム -->
-    <div class="mainColumn" role="main">
-        <div class="mainColumnList">
-            <h1>
-                20260224絵が描けない人間が、3DCGソフトblenderに挑戦してみる（１）
-            </h1>
-            <hr>
-            <div>
-                <div class="ColumnBodyList">
-                    <img src="images/header016.jpg" alt="20260224blender" title="20260224blender" class="ColumnHeader">                    
-                    <pre>
-「blender」という3DのCG制作アプリケーションがある。無料で全機能が使えるため、アマチュアの参入障壁が低いことが特徴だ。
-かくいうわたしも数年間「blenderやってみたいな」と思ってはいたものの、なかなか踏み出さないでいた。
+<body>
 
-わたしはお絵描きチャットとかお絵描きBBSとかが存在していたインターネットで幼少期を過ごしていた。あの時、わたしにとっての障壁は「左利きであること」だった。
-ペンタブレットを買ってほしいと言えるほど絵はうまくないが、マウスは非利き手（右手）で操作しているため上手くは描けない。結局あのころは曲線ツールを駆使して絵を描いていたように思う。
-もともと絵が下手だという自覚はあったため、それも文章が書けるようになってからはやらなくなってしまった。
+<nav class="nav">
+  <a href="../index.htm">トップ</a>
+  <a href="../column.html">コラム</a>
+  <a href="../book.html">書籍</a>
+  <a href="../event.html">イベント</a>
+  <a href="../profile.html">プロフィール</a>
+  <a href="../form.html">お問い合わせ</a>
+</nav>
 
-しかし！ blenderであれば、どうだろう？
-もちろん絵が上手い人のほうが3DCGもうまいような気はする。空間把握能力などが影響しているだろうから。
-でも、ただ立方体を置くだけなら？ それを回すだけなら？ もしかしたらわたしにもできるかもしれない！
-やってみよう！
-今回はそういう記事である。
+<img class="band" src="images/header016.jpg" alt="">
 
-◇　◇　◇
+<div class="inner aftband">
 
-blenderの勉強にちょうどよさそうな教材があったので、購入してみた。
+  <h1 class="ttl">絵が描けない人間が、3DCGソフトblenderに挑戦してみる（１）</h1>
+  <div class="meta">2026.02.24</div>
 
-Tom Studio著『ゼロからスタート！blender1冊目の教科書』。すごく分かりやすくて、サクサク進めた。
-<div style="display: flex; gap: 16px;">
-  <div style="flex: 1; text-align: center;">
-    <img src="images/20260224_01.jpg"
-         alt="Tom Studio著『ゼロからスタート！blender1冊目の教科書』" title="Tom Studio著『ゼロからスタート！blender1冊目の教科書』"
-         style="width: 80%; height: auto; max-width: 100%;">
-  </div>
-  <div style="flex: 1; text-align: center;">
-    <img src="images/20260224_02.png"
-         alt="blender練習時のスクリーンショット" title="blender練習時のスクリーンショット"
-         style="width: 80%; height: auto; max-width: 100%;">
-  </div></div>
-そして練習したものの最終形が、こちらだ。
-<img src="images/20260224_03.png" alt="完成したblender1号" title="完成したblender1号" class="enlargeable-img" style="width: 80%; height: auto; display: block; max-width: 100%; cursor: zoom-in;">
-どことなくローポリ感があるというか、可愛い、可愛いのだが、このまま続けていくのはわたしには難しいかもしれない、と思った。このエコーチェンバー、フィルターバブルの時代、blenderのTipsをちょっと検索してみるだけで、さまざまなSNSがblenderの強者たちの美術展になっていく。様々な作例を見ることになりわたしがやりたいのはこういう「可愛らしいCG」ではなく、もうちょっと無骨なもの、あるいは不可解なものなのではなかろうか？ と思い当たった。
+  <p>「blender」という3DのCG制作アプリケーションがある。無料で全機能が使えるため、アマチュアの参入障壁が低いことが特徴だ。かくいうわたしも数年間「blenderやってみたいな」と思ってはいたものの、なかなか踏み出さないでいた。</p>
 
-そして、新たに掲げた目標は、こちら。
-「自分の本の挿絵をblenderで作る」！
+  <p>わたしはお絵描きチャットとかお絵描きBBSとかが存在していたインターネットで幼少期を過ごしていた。あの時、わたしにとっての障壁は「左利きであること」だった。ペンタブレットを買ってほしいと言えるほど絵はうまくないが、マウスは非利き手（右手）で操作しているため上手くは描けない。結局あのころは曲線ツールを駆使して絵を描いていたように思う。もともと絵が下手だという自覚はあったため、それも文章が書けるようになってからはやらなくなってしまった。</p>
 
-次回へ続く。
-                    </pre>
-    </div>
-            <div class="ColumnBodyList">
-                <a href="../column.html">■戻る</a>
-            </div>
-        </div>
-    </div>
-<!---画像拡大表示用-->
-<div id="imgModal" class="modal">
-  <span class="modal-close">&times;</span>
-  <img alt="" class="modal-content" id="modalImg">
+  <p>しかし！　blenderであれば、どうだろう？もちろん絵が上手い人のほうが3DCGもうまいような気はする。空間把握能力などが影響しているだろうから。でも、ただ立方体を置くだけなら？　それを回すだけなら？　もしかしたらわたしにもできるかもしれない！やってみよう！今回はそういう記事である。</p>
+
+  <div class="sep">◇◇◇</div>
+
+  <p>blenderの勉強にちょうどよさそうな教材があったので、購入してみた。</p>
+
+  <p>Tom Studio著『ゼロからスタート！blender1冊目の教科書』。すごく分かりやすくて、サクサク進めた。</p>
+
+  <figure>
+    <img src="images/20260224_01.jpg" alt="Tom Studio著『ゼロからスタート！blender1冊目の教科書』の表紙。キーボードとマグカップが置かれた机の上にある">
+  </figure>
+
+  <figure>
+    <img src="images/20260224_02.png" alt="blenderのビューポートに表示された、オレンジ色の猫のキャラクターとフードボウル、魚の骨のおもちゃ、天井から下がるランプの3Dモデル">
+  </figure>
+
+  <p>そして練習したものの最終形が、こちらだ。</p>
+
+  <figure>
+    <img src="images/20260224_03.png" alt="左に制作中のblenderの画面、右にオレンジ色の猫のキャラクターが青緑の部屋にいるレンダリング画像を並べたもの">
+  </figure>
+
+  <p>どことなくローポリ感があるというか、可愛い、可愛いのだが、このまま続けていくのはわたしには難しいかもしれない、と思った。このエコーチェンバー、フィルターバブルの時代、blenderのTipsをちょっと検索してみるだけで、さまざまなSNSがblenderの強者たちの美術展になっていく。様々な作例を見ることになりわたしがやりたいのはこういう「可愛らしいCG」ではなく、もうちょっと無骨なもの、あるいは不可解なものなのではなかろうか？　と思い当たった。</p>
+
+  <p>そして、新たに掲げた目標は、こちら。「自分の本の挿絵をblenderで作る」！</p>
+
+  <p>次回へ続く。</p>
+
+  <p class="more"><a href="../column.html">← コラム一覧へ</a></p>
+
 </div>
-
-<style>
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 9999;
-  padding-top: 40px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-</style>
-
-<script>
-document.querySelectorAll('.enlargeable-img').forEach(img => {
-  img.addEventListener('click', function() {
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImg');
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    modalImg.alt = this.alt;
-  });
-});
-
-document.querySelector('.modal-close').onclick = function() {
-  document.getElementById('imgModal').style.display = "none";
-};
-
-document.getElementById('imgModal').onclick = function(e) {
-  if (e.target === this) {
-    this.style.display = "none";
-  }
-};
-</script>
-<!--↑終わり-->
-
-
-<script>
-  window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-  });
-</script>
 
 </body>
 </html>

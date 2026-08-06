@@ -1,0 +1,260 @@
+/*
+ * 田村真夏 公式サイト — 新デザイン ベースCSS
+ * 2026-08-05 確定。決定の経緯は website_redesign\design_decisions.md
+ *
+ * 適用先：公式サイト全体 ＋ 『不完全な三角形』特設サイト
+ * 数値を変えるときは design_decisions.md も直すこと（片方だけ直すとズレる）
+ */
+
+:root{
+  /* 書体。BIZ UD明朝はMediumウェイトのみ存在する（Regular/Boldは無い）ため、
+     見出しは太さではなくサイズと字間で差をつける。太字指定は合成太字になるので避ける */
+  --serif:'BIZ UDPMincho','BIZ UDP明朝 Medium','BIZ UDMincho','BIZ UD明朝 Medium',
+          'Yu Mincho','YuMincho','Hiragino Mincho ProN','Noto Serif JP',serif;
+  --sans:'BIZ UDPGothic','BIZ UDPゴシック','BIZ UDGothic','Yu Gothic UI','Meiryo',sans-serif;
+
+  /* 色。すべて #fffefb 地に対するコントラスト比を実測済み。
+     文字に opacity は使わない（背景次第で実効値が変わり、基準を割るため） */
+  --paper:#fffefb;
+  --ink:#232326;    /* 本文        15.54:1  AAA超え */
+  --sub:#5f5f64;    /* ナビ・ラベル  6.30:1  AA可 */
+  --meta:#616062;   /* 日付・メタ    6.19:1  AA可 */
+  --link:#1a4f7a;   /* リンク        8.52:1  AA可 */
+  --rule:#e8e3d9;   /* 罫線 */
+
+  --measure:35em;   /* 本文1行の最大幅。日本語で約35字 */
+  --wide:44em;      /* 一覧・トップの本文幅 */
+}
+
+html{ font-size:100%; }  /* ブラウザの既定サイズを尊重する。px固定にしない */
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.0625rem;   /* 17px 相当 */
+  line-height:2.0;
+}
+
+/* ---------- リンク ----------
+   下線は常時つける。色が見えない人にもリンクだと分かるようにするため
+   （東京都カラーUDガイドライン ポイント10「強調は色以外の方法と組み合わせる」） */
+a{
+  color:var(--link);
+  text-decoration:underline;
+  text-underline-offset:.18em;
+  text-decoration-thickness:.06em;
+}
+a:hover{ text-decoration-thickness:.12em; }
+a:focus-visible{ outline:3px solid var(--link); outline-offset:3px; border-radius:2px; }
+
+/* ---------- ナビ ---------- */
+.nav{
+  display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;
+  padding:1.6rem 1rem 0;
+  font-size:.8em; letter-spacing:.08em;
+}
+.nav a{ color:var(--sub); text-decoration:none; }
+.nav a:hover{ text-decoration:underline; }
+
+/* ---------- ヘッダー帯 ----------
+   装飾なので HTML 側は alt="" にする */
+.band{ width:100%; height:270px; object-fit:cover; display:block; }
+/* トップの帯はナビとの間を少し空ける */
+.bandtop{ margin-top:1.6rem; }
+
+/* ---------- 本文 ---------- */
+.inner{ max-width:var(--measure); margin:0 auto; padding:0 1.6rem 4rem; }
+.wrap{  max-width:var(--wide);    margin:0 auto; padding:0 1.6rem 3.5rem; }
+
+/* 帯画像が無いページ（一覧・書籍・プロフィール等）で、ナビとの間を空ける */
+.pagetop{ padding-top:2.6rem; }
+/* 記事ページで帯画像の下に空ける */
+.aftband{ padding-top:3.2rem; }
+
+h1.ttl{ font-size:1.55em; font-weight:500; line-height:1.6; margin:0 0 .55em; letter-spacing:.04em; }
+.meta{ font-size:.8em; letter-spacing:.1em; color:var(--meta); margin-bottom:2.6rem; }
+
+/* 本文の中見出し。BIZ UD明朝はMediumしか無いので、太さでなく
+   サイズ・字間・前後の余白で階層を出す（合成太字は輪郭が濁るため使わない） */
+h2{
+  font-size:1.22em; font-weight:500; line-height:1.65;
+  letter-spacing:.04em; margin:3em 0 .8em;
+}
+h3{
+  font-size:1.06em; font-weight:500; line-height:1.7;
+  letter-spacing:.03em; margin:2.4em 0 .6em;
+}
+h2:first-child,h3:first-child{ margin-top:0; }
+p{ margin:0 0 1.35em; }
+.sep{ text-align:center; letter-spacing:.6em; color:var(--meta); margin:2.2em 0; }
+.secttl{ font-size:.8em; letter-spacing:.16em; color:var(--sub); margin:3rem 0 .9rem; }
+.more{ font-size:.84em; letter-spacing:.06em; margin:1rem 0 0; text-align:right; }
+.kicker{ font-size:.8em; letter-spacing:.16em; color:var(--sub); margin:0 0 .5rem; }
+.hero{ max-width:var(--measure); margin:0 auto; padding:2.6rem 1.6rem 0; }
+
+/* ---------- New ----------
+   色を1つも使わない。白黒で印刷しても伝わる */
+.isnew{
+  font-family:var(--sans);
+  font-size:.62em; font-weight:700; letter-spacing:.1em;
+  border:1.5px solid var(--ink); border-radius:3px;
+  padding:.05em .5em .1em; margin-left:.6em;
+  vertical-align:.18em; white-space:nowrap;
+}
+
+/* ---------- 目次型の一覧 ----------
+   サムネイルは「見た目で回を見分ける」ための画像で、すぐ隣のリンク文字（日付＋タイトル）と
+   同じ記事を指す。alt を書くと読み上げが二重になるので、HTML 側は alt="" にする。
+   スクリーンリーダー利用者にとっての識別子は日付とタイトルのほうで、どちらも文字で入っている。
+   画像には loading="lazy" を付けること（19枚が一度に読み込まれるのを防ぐ） */
+.idx article{
+  display:grid; grid-template-columns:120px minmax(0,1fr); gap:0 1.3rem;
+  align-items:center; padding:1.05rem 0; border-bottom:1px solid var(--rule);
+}
+.idx article:first-of-type{ border-top:1px solid var(--rule); }
+.idx img{ width:120px; height:78px; object-fit:cover; display:block; }
+.idx .date{ font-size:.78em; letter-spacing:.1em; color:var(--meta); }
+.idx h3{ font-size:1.02em; font-weight:500; line-height:1.6; margin:.25em 0 0; }
+.idx h3 a{ text-decoration:none; color:var(--ink); }
+.idx h3 a:hover{ text-decoration:underline; }
+
+/* ---------- 本 ---------- */
+.books{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+.book{ display:grid; grid-template-columns:78px minmax(0,1fr); gap:0 1rem; align-items:center; }
+/* 表紙の枠。刊行前で表紙が無い本は空の <div class="cov"> のままにして、
+   枠だけを見せる。表紙がある本は <img class="cov"> にする。
+   判型が本ごとに違うので contain で全体を収める（cover だと表紙の端が切れる） */
+.book .cov{ width:78px; height:110px; background:#efeae0; border:1px solid #e2dbcd; }
+img.cov{ object-fit:contain; display:block; }
+.book .bt{ font-size:.96em; font-weight:500; line-height:1.55; }
+.book .bt a{ text-decoration:none; color:var(--ink); }
+.book .bt a:hover{ text-decoration:underline; }
+.book .bm{ font-size:.8em; color:var(--meta); }
+
+/* ---------- 表 ----------
+   book.html・event.html の書誌情報で使う。縦罫は引かず、横罫だけで行を分ける */
+table{ width:100%; border-collapse:collapse; margin:1.8em 0; font-size:.94em; line-height:1.85; }
+th,td{ border:0; border-bottom:1px solid var(--rule); padding:.7em .8em; text-align:left; vertical-align:top; }
+th{ width:9em; white-space:nowrap; font-weight:500; color:var(--sub); }
+table caption{ text-align:left; font-size:.8em; letter-spacing:.16em; color:var(--sub); padding-bottom:.6em; }
+
+/* 列見出しが上にあるデータ表（20250924coping のコーピングリスト、
+   20251016azuki の材料表など）。上の th は「項目名が左にある表」用の指定なので、
+   thead の中では幅と折り返しの指定を戻す */
+thead th{ width:auto; white-space:normal; color:var(--ink); border-bottom:1.5px solid var(--ink); }
+
+/* ---------- 並び替えできる表 ----------
+   20250924coping の1本だけで使う。列見出しを <button> にしているのは、
+   クリックだけの実装だとキーボードで操作できないため。
+   並び順は ↕ ▲ ▼ の形で示す。色は使わない（白黒でも伝わるようにする） */
+th .sortbtn{
+  font:inherit; color:inherit; background:none; border:0; padding:0;
+  display:inline-flex; align-items:baseline; gap:.45em;
+  text-align:left; cursor:pointer;
+}
+th .sortbtn:hover{ text-decoration:underline; }
+th .sortbtn:focus-visible{ outline:3px solid var(--link); outline-offset:3px; border-radius:2px; }
+th .sortmark{ font-size:.78em; color:var(--meta); }
+
+/* ---------- 定義リスト（プロフィールの 拠点／趣味 など） ---------- */
+dl{ margin:1.8em 0; }
+dt{ font-size:.8em; letter-spacing:.16em; color:var(--sub); margin-top:1.4em; }
+dt:first-child{ margin-top:0; }
+dd{ margin:.2em 0 0; }
+
+/* ---------- 箇条書き ---------- */
+ul,ol{ margin:1.2em 0; padding-left:1.4em; }
+li{ margin-bottom:.4em; }
+
+/* ---------- 図版 ---------- */
+figure{ margin:2.4em 0; }
+figure img{ width:100%; height:auto; display:block; }
+figcaption{ font-size:.84em; color:var(--meta); margin-top:.7em; }
+.inner img{ max-width:100%; height:auto; }
+
+/* ---------- コードの作例 ----------
+   20250924coping のように、本文がコードを引用している記事で使う。
+   引用であって実行対象ではないので、必ず &lt; &gt; に置き換えて <pre> に入れる。
+   本文の段落を <pre> で包まないこと（旧サイトはそうしていた。段落は <p>） */
+pre{
+  font-family:'Consolas','BIZ UDGothic','Courier New',monospace;
+  font-size:.84em; line-height:1.7;
+  background:#faf8f3; border-left:2px solid var(--rule);
+  padding:.9em 1.1em; margin:2em 0;
+  overflow-x:auto;
+}
+code{ font-family:'Consolas','BIZ UDGothic','Courier New',monospace; font-size:.92em; }
+
+/* ---------- 埋め込み ----------
+   .embed   … お問い合わせフォーム（縦長）
+   .embed16 … YouTube など16:9の動画。iframe を width/height 属性のまま置くと
+              狭い画面で横にはみ出すので、必ずこの枠で包む */
+.embed{ position:relative; width:100%; padding-top:125%; margin:2em 0; }
+.embed16{ position:relative; width:100%; padding-top:56.25%; margin:2.4em 0; }
+.embed iframe,
+.embed16 iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+/* ---------- 画像を左、本文を右に置く2カラム ----------
+   book.html と profile.html で共有する。狭い画面では画像が上、本文が下に落ちる */
+.media{
+  display:grid; grid-template-columns:180px minmax(0,1fr);
+  gap:0 2rem; align-items:start; margin:3.2em 0;
+}
+/* 2つ目以降の塊は細い罫線で区切る。1冊がどこまでかを目で分かるようにする */
+.media + .media{ border-top:1px solid var(--rule); padding-top:3.2em; }
+
+/* 画像に枠線を付ける理由：『雑文集』の表紙は上半分が白地、顔写真は背景が白い壁で、
+   どちらも地色 #fffefb に溶ける。影を使わないのはフラットな設計と揃えるため */
+.media > img{
+  width:100%; height:auto; display:block;
+  border:1px solid #d8d2c6;
+}
+
+/* ラベルと見出しをひとつの塊として近づける（h2 の 3em の上余白を殺す） */
+.media h2{ margin-top:0; }
+.media .kicker{ margin-bottom:.35rem; }
+.media table{ margin:1.2em 0; }
+
+/* 価格・税・購入リンクを1行にまとめる */
+.buy{ margin-top:1.4em; }
+
+@media (max-width:700px){
+  .media{ grid-template-columns:1fr; gap:1.4rem 0; }
+  .media + .media{ padding-top:2.4em; }
+  .media > img{ max-width:220px; }
+}
+
+/* ---------- 一覧でヘッダー画像が無い記事 ----------
+   古い記事の一部に画像が無い。サムネイル欄を詰めて文字だけの行にする */
+.idx article.noimg{ grid-template-columns:1fr; }
+
+/* ---------- 引用・注記 ---------- */
+blockquote{
+  margin:2em 0; padding:.2em 0 .2em 1.1em;
+  border-left:2px solid var(--rule); color:var(--ink);
+}
+.aside{
+  margin:1.6em 0; padding:.9em 1.1em;
+  border-left:2px solid var(--rule); background:#faf8f3;
+  font-size:.94em;
+}
+
+/* ---------- 動きへの配慮 ----------
+   前庭障害・注意の逸れやすさに配慮して、動きを求めない設定なら全部止める */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- 狭い画面 ----------
+   サイドバーを廃止したので、幅による崩れが起きる箇所が無い。
+   ここでやるのは帯の高さと本の段組みだけ */
+@media (max-width:860px){
+  .books{ grid-template-columns:1fr; }
+}
+@media (max-width:600px){
+  .band{ height:190px; }
+  .idx article{ grid-template-columns:92px minmax(0,1fr); gap:0 1rem; }
+  .idx img{ width:92px; height:62px; }
+}
