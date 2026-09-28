@@ -1,0 +1,123 @@
+/* This stylesheet follows base.css and belongs only to the book and its reader. */
+:root {
+  --paper: #fff;
+  --ink: #181818;
+  --sub: #555;
+  --meta: #555;
+  --link: #181818;
+  --rule: #767676;
+  --serif: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "BIZ UDPMincho", serif;
+  --sans: "Yu Gothic", "Yu Gothic UI", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { font-size: 1rem; line-height: 1.9; }
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: .25em; }
+a:hover { text-decoration-thickness: 2px; }
+:is(a, button, summary):focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 0; }
+button { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+.shell { width: min(100% - 64px, 1180px); margin-inline: auto; }
+.skip-link { position: absolute; z-index: 10; left: 16px; top: -100px; padding: 10px 16px; background: #fff; }
+.skip-link:focus { top: 12px; }
+.site-head { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.site-name { display: inline-flex; align-items: center; min-height: 44px; font-size: 1.08rem; letter-spacing: .08em; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; font: .82rem/1.5 var(--sans); }
+.site-nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.hero-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
+.hero-grid > * { min-width: 0; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.word { min-height: 72px; display: grid; place-items: center; padding: 12px 8px; font: .85rem/1.5 var(--sans); letter-spacing: .08em; }
+.black { background: var(--ink); }
+.hero-title { grid-column: span 4; min-height: 390px; display: flex; flex-direction: column; justify-content: center; padding: 40px; }
+.hero-title h1 { font-size: clamp(2.6rem, 5.6vw, 5.25rem); font-weight: 500; line-height: 1.24; letter-spacing: .015em; white-space: nowrap; margin: 0 0 20px; }
+.hero-title h1 span { display: inline; }
+.hero-title p { margin: 0; }
+.subtitle { font-size: clamp(1rem, 1.7vw, 1.4rem); letter-spacing: .08em; }
+.hero-title .author { margin-top: 16px; font-size: 1rem; }
+.penrose { grid-column: span 2; position: relative; display: grid; align-items: center; background: #fff; }
+.penrose img { display: block; width: 100%; height: auto; }
+.section { padding-block: 88px; border-bottom: 1px solid var(--rule); scroll-margin-top: 28px; }
+.section h2 { margin: 0 0 34px; font-size: clamp(1.65rem, 2.7vw, 2.25rem); font-weight: 500; line-height: 1.5; letter-spacing: .04em; }
+.about-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.65fr); gap: 80px; }
+.lead { margin: 0; max-width: 11em; font-size: clamp(1.7rem, 2.7vw, 2.35rem); line-height: 1.8; }
+.prose { max-width: 38em; font-size: 1.0625rem; line-height: 2.1; }
+.prose p { margin: 0 0 1.4em; }
+.prose .source-note { margin-bottom: 0; font: .8rem/1.8 var(--sans); color: var(--sub); }
+.section-intro { max-width: 38em; margin: 0 0 40px; font-size: 1.0625rem; line-height: 2; }
+.chapters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; row-gap: 48px; }
+.chapter { min-width: 0; }
+.chapter h3 { display: flex; align-items: baseline; gap: 22px; font-size: 1.55rem; font-weight: 500; margin: 0 0 20px; line-height: 1.5; }
+.chapter h3 > span { font: .9rem/1.5 var(--sans); font-variant-numeric: tabular-nums; }
+.keyword-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-left: 1px solid var(--rule); border-top: 1px solid var(--rule); }
+.keyword-grid > span { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 70px; padding: 8px 4px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); text-align: center; font: .84rem/1.6 var(--sans); overflow-wrap: anywhere; }
+.book-info { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; }
+.cover { display: block; width: 100%; max-width: 420px; height: auto; border: 1px solid var(--rule); }
+.book-info-main { min-width: 0; }
+.fact-table { margin: 0; width: 100%; font-size: 1rem; line-height: 1.85; border-top: 1px solid var(--rule); }
+.fact-table th, .fact-table td { border-bottom: 1px solid var(--rule); padding: 14px 10px; vertical-align: top; }
+.fact-table th { width: 7em; white-space: normal; font: .82rem/1.9 var(--sans); font-weight: 500; color: var(--ink); }
+.fact-table td { overflow-wrap: anywhere; }
+.benefit { border: 1px solid var(--ink); padding: 18px 20px; margin: 28px 0 0; line-height: 1.9; }
+.sample { padding-block: 28px; scroll-margin-top: 28px; }
+.sample h3 { font-size: 1.6rem; font-weight: 500; margin: 0 0 12px; line-height: 1.5; }
+.sample p { margin: 0 0 12px; }
+.sample-pages { display: block; margin-top: 4px; font: .8rem/1.8 var(--sans); color: var(--sub); }
+.read-link { display: inline-flex; align-items: center; min-height: 48px; font: .95rem/1.7 var(--sans); }
+.toc-details { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.toc-details summary { display: list-item; padding: 16px 4px; cursor: pointer; font: .95rem/1.8 var(--sans); }
+.toc-details summary::marker { font-size: .75em; }
+.toc { padding: 8px 4px 24px; }
+.toc-list { list-style: none; padding: 0; margin: 0; }
+.toc-list li, .toc h3 { display: grid; grid-template-columns: minmax(0, 1fr) 2.5em; gap: 16px; }
+.toc-list li { padding: 10px 0; margin: 0; border-bottom: 1px solid #bbb; line-height: 1.8; font-size: .94rem; }
+.toc-list li > span:last-child, .toc-page { text-align: right; font: .8rem/1.9 var(--sans); font-variant-numeric: tabular-nums; }
+.toc h3 { margin: 26px 0 8px; font-size: 1.05rem; font-weight: 500; }
+.toc-end { margin-top: 26px; }
+.buy-table { max-width: 880px; }
+.buy-table th { width: 10em; }
+.event-link { margin: 16px 0 0; font: .85rem/1.8 var(--sans); }
+.event-link a, .site-foot a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-foot { padding-block: 18px; font: .8rem/1.8 var(--sans); }
+@media (max-width: 980px) {
+  .hero-title { padding: 28px; min-height: 320px; }
+  .hero-title h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); }
+  .about-layout { gap: 40px; }
+  .book-info { gap: 36px; }
+  .chapters { column-gap: 32px; }
+  .keyword-grid > span { font-size: .78rem; }
+}
+@media (max-width: 760px) {
+  .shell { width: calc(100% - 32px); }
+  .site-head { display: block; padding-block: 14px 6px; }
+  .site-name { font-size: 1rem; }
+  .site-nav { justify-content: space-between; gap: 0 12px; font-size: .76rem; }
+  .hero-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .word { min-height: 48px; font-size: .77rem; }
+  .hero-title { grid-column: 1 / -1; padding: 28px 24px; min-height: 242px; }
+  .hero-title h1 { font-size: clamp(2.5rem, 13.2vw, 4.8rem); line-height: 1.12; margin-bottom: 20px; }
+  .hero-title h1 span { display: block; }
+  .subtitle { font-size: 1rem; }
+  .hero-title .author { font-size: .9rem; margin-top: 8px; }
+  .penrose { grid-column: 1 / -1; }
+  .penrose picture { max-width: 360px; justify-self: center; }
+  .section { padding-block: 56px; scroll-margin-top: 16px; }
+  .section h2 { margin-bottom: 26px; }
+  .about-layout { display: block; }
+  .lead { max-width: 13em; margin-bottom: 28px; font-size: 1.65rem; line-height: 1.75; }
+  .prose { font-size: 1rem; line-height: 2; }
+  .section-intro { font-size: 1rem; margin-bottom: 32px; }
+  .chapters { grid-template-columns: 1fr; gap: 36px; }
+  .chapter h3 { margin-bottom: 16px; font-size: 1.4rem; }
+  .keyword-grid > span { min-height: 58px; font-size: .76rem; }
+  .book-info { grid-template-columns: 1fr; gap: 32px; }
+  .cover { width: min(82%, 320px); margin-inline: auto; }
+  .fact-table { font-size: .95rem; }
+  .fact-table th { width: 6em; padding-left: 0; font-size: .77rem; }
+  .fact-table td { padding-right: 0; }
+  .benefit { padding: 16px; font-size: .95rem; }
+  .buy-table th { width: 7em; }
+  .read-link { font-size: .88rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

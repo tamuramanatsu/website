@@ -93,6 +93,8 @@ p{ margin:0 0 1.35em; }
 .more{ font-size:.84em; letter-spacing:.06em; margin:1rem 0 0; text-align:right; }
 .kicker{ font-size:.8em; letter-spacing:.16em; color:var(--sub); margin:0 0 .5rem; }
 .hero{ max-width:var(--measure); margin:0 auto; padding:2.6rem 1.6rem 0; }
+.feature-banner{ display:block; margin:1.5em 0 0; }
+.feature-banner img{ display:block; width:100%; height:auto; }
 
 /* ---------- New ----------
    色を1つも使わない。白黒で印刷しても伝わる */
@@ -123,9 +125,8 @@ p{ margin:0 0 1.35em; }
 /* ---------- 本 ---------- */
 .books{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
 .book{ display:grid; grid-template-columns:78px minmax(0,1fr); gap:0 1rem; align-items:center; }
-/* 表紙の枠。刊行前で表紙が無い本は空の <div class="cov"> のままにして、
-   枠だけを見せる。表紙がある本は <img class="cov"> にする。
-   判型が本ごとに違うので contain で全体を収める（cover だと表紙の端が切れる） */
+/* 表紙の枠。判型が本ごとに違うので contain で全体を収める
+   （cover だと表紙の端が切れる） */
 .book .cov{ width:78px; height:110px; background:#efeae0; border:1px solid #e2dbcd; }
 img.cov{ object-fit:contain; display:block; }
 .book .bt{ font-size:.96em; font-weight:500; line-height:1.55; }
