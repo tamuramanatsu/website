@@ -88,6 +88,8 @@ h3{
 }
 h2:first-child,h3:first-child{ margin-top:0; }
 p{ margin:0 0 1.35em; }
+/* コラム本文はスペースを入れずに一字下げ。写真の説明と一覧リンクは除く */
+.column-page .inner p:not(.more):not(.caption){ text-indent:1em; }
 .sep{ text-align:center; letter-spacing:.6em; color:var(--meta); margin:2.2em 0; }
 .secttl{ font-size:.8em; letter-spacing:.16em; color:var(--sub); margin:3rem 0 .9rem; }
 .more{ font-size:.84em; letter-spacing:.06em; margin:1rem 0 0; text-align:right; }
