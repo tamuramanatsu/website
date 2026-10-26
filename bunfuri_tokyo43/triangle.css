@@ -57,7 +57,6 @@ button { font: inherit; color: inherit; }
 .fact-table th, .fact-table td { border-bottom: 1px solid var(--rule); padding: 14px 10px; vertical-align: top; }
 .fact-table th { width: 7em; white-space: normal; font: .82rem/1.9 var(--sans); font-weight: 500; color: var(--ink); }
 .fact-table td { overflow-wrap: anywhere; }
-.benefit { border: 1px solid var(--ink); padding: 18px 20px; margin: 28px 0 0; line-height: 1.9; }
 .sample { padding-block: 28px; scroll-margin-top: 28px; }
 .sample h3 { font-size: 1.6rem; font-weight: 500; margin: 0 0 12px; line-height: 1.5; }
 .sample p { margin: 0 0 12px; }
@@ -73,8 +72,6 @@ button { font: inherit; color: inherit; }
 .toc-list li > span:last-child, .toc-page { text-align: right; font: .8rem/1.9 var(--sans); font-variant-numeric: tabular-nums; }
 .toc h3 { margin: 26px 0 8px; font-size: 1.05rem; font-weight: 500; }
 .toc-end { margin-top: 26px; }
-.buy-table { max-width: 880px; }
-.buy-table th { width: 10em; }
 .event-link { margin: 16px 0 0; font: .85rem/1.8 var(--sans); }
 .event-link a, .site-foot a { display: inline-flex; align-items: center; min-height: 44px; }
 .site-foot { padding-block: 18px; font: .8rem/1.8 var(--sans); }
@@ -114,8 +111,6 @@ button { font: inherit; color: inherit; }
   .fact-table { font-size: .95rem; }
   .fact-table th { width: 6em; padding-left: 0; font-size: .77rem; }
   .fact-table td { padding-right: 0; }
-  .benefit { padding: 16px; font-size: .95rem; }
-  .buy-table th { width: 7em; }
   .read-link { font-size: .88rem; }
 }
 @media (prefers-reduced-motion: reduce) {

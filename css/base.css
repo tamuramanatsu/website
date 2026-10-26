@@ -261,3 +261,43 @@ blockquote{
   .idx article{ grid-template-columns:92px minmax(0,1fr); gap:0 1rem; }
   .idx img{ width:92px; height:62px; }
 }
+
+/* Book special page: venue information follows the existing type and spacing. */
+.triangle-site .venue-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,4rem);align-items:start;}
+.triangle-site .venue-layout > div{min-width:0;}
+.triangle-site .venue-layout h3{font-size:1.4rem;font-weight:500;line-height:1.6;margin:0 0 1.25rem;}
+.triangle-site .venue-map{max-width:460px;margin:0;}
+.triangle-site .venue-map > a{display:block;}
+.triangle-site .venue-map figcaption{font-size:.875rem;line-height:1.9;}
+.triangle-site .venue-map figcaption a{display:inline-flex;align-items:center;min-height:44px;}
+.triangle-site .venue-tickets{font-size:1rem;line-height:2;}
+.triangle-site .venue-tickets p{margin:0 0 1.25rem;}
+@media(max-width:760px){
+  .triangle-site .venue-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .triangle-site .venue-map{margin-inline:auto;}
+}
+
+.triangle-site .venue-sales{margin-bottom:3rem;padding-bottom:2rem;}
+.triangle-site .venue-sales + .venue-layout{border-top:1px solid var(--rule);padding-top:3rem;}
+.triangle-site .venue-anchor{display:block;scroll-margin-top:28px;}
+
+
+/* Purchase guide */
+.triangle-site .purchase-guide{max-width:58rem;font-size:1rem;line-height:2;}
+.triangle-site .purchase-guide h3{font-size:1.4rem;font-weight:700;line-height:1.6;margin:0 0 2rem;}
+
+.triangle-site .ticket-table{margin:0 0 1.25rem;}
+
+/* Purchase options: wrap all cell text within the table. */
+.triangle-site .purchase-table{width:100%;border-collapse:collapse;table-layout:fixed;border:1px solid var(--rule);font-size:1rem;line-height:2;}
+.triangle-site .purchase-table th,.triangle-site .purchase-table td{border:1px solid var(--rule);padding:1.5rem;vertical-align:top;text-align:left;white-space:normal;overflow-wrap:anywhere;word-break:normal;}
+.triangle-site .purchase-table th{width:32%;font-size:1.0625rem;font-weight:700;line-height:1.8;color:var(--ink);}
+.triangle-site .purchase-table p{margin:0 0 .9rem;}
+.triangle-site .purchase-table p:last-child{margin-bottom:0;}
+@media(max-width:760px){
+  .triangle-site .purchase-table,.triangle-site .purchase-table tbody,.triangle-site .purchase-table tr{display:block;}
+  .triangle-site .purchase-table{border-bottom:0;}
+  .triangle-site .purchase-table th,.triangle-site .purchase-table td{display:block;width:100%;border:0;padding:1.25rem;}
+  .triangle-site .purchase-table th{padding-bottom:.5rem;}
+  .triangle-site .purchase-table td{padding-top:.5rem;border-bottom:1px solid var(--rule);}
+}
