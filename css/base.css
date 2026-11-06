@@ -95,6 +95,20 @@ p{ margin:0 0 1.35em; }
 .more{ font-size:.84em; letter-spacing:.06em; margin:1rem 0 0; text-align:right; }
 .kicker{ font-size:.8em; letter-spacing:.16em; color:var(--sub); margin:0 0 .5rem; }
 .hero{ max-width:var(--measure); margin:0 auto; padding:2.6rem 1.6rem 0; }
+
+.hero .notice-covers{ display:flex; gap:1rem; margin:1.4em 0; }
+.hero .notice-covers a{ display:block; width:140px; max-width:calc((100% - 1rem) / 2); }
+.hero .notice-covers img{
+  display:block;
+  box-sizing:border-box;
+  width:100%;
+  height:auto;
+  aspect-ratio:7 / 10;
+  object-fit:contain;
+  background:#fff;
+  border:1px solid #000;
+}
+
 .feature-banner{ display:block; margin:1.5em 0 0; }
 .feature-banner img{ display:block; width:100%; height:auto; }
 
@@ -171,11 +185,70 @@ dd{ margin:.2em 0 0; }
 ul,ol{ margin:1.2em 0; padding-left:1.4em; }
 li{ margin-bottom:.4em; }
 
+/* 本文の目次：淡い背景の箱と細い横罫でまとめる */
+.column-page .article-toc{
+  background:#f5f7f8;
+  margin:2em 0;
+  padding:1em 1.3em;
+}
+.column-page .article-toc table{
+  margin:0;
+  font-size:.82em;
+  line-height:1.6;
+  table-layout:fixed;
+}
+.column-page .article-toc caption{
+  padding:0 0 .65em;
+  font-size:1em;
+  letter-spacing:.04em;
+}
+.column-page .article-toc caption::before{ content:"▾"; margin-right:.5em; }
+.column-page .article-toc td{ padding:0; border-bottom:1px solid #cdd2d5; }
+.column-page .article-toc tr:last-child td{ border-bottom:0; }
+.column-page .article-toc a{
+  color:var(--ink);
+  text-decoration:none;
+  display:block;
+  padding:.55em 0;
+  overflow-wrap:anywhere;
+}
+.column-page .article-toc .toc-subsection td{ padding-left:1.2em; font-size:1em; }
+
+.column-page .article-note{ font-size:.88em; }
+
+.column-page .event-images{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.4rem;
+  margin:2.4em 0;
+  align-items:start;
+}
+.column-page .event-images figure{ margin:0; min-width:0; }
+
 /* ---------- 図版 ---------- */
 figure{ margin:2.4em 0; }
 figure img{ width:100%; height:auto; display:block; }
 figcaption{ font-size:.84em; color:var(--meta); margin-top:.7em; }
 .inner img{ max-width:100%; height:auto; }
+.column-page img.book-image{ box-sizing:border-box; border:1px solid #000; }
+
+/* 月報冒頭の書影：同じ枠に表紙全体を収める */
+.column-page .book-covers{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.4rem;
+  margin:2.4em 0;
+}
+.column-page .book-covers figure{ margin:0; min-width:0; }
+.column-page .book-covers img{
+  box-sizing:border-box;
+  width:100%;
+  height:auto;
+  aspect-ratio:7 / 10;
+  object-fit:contain;
+  background:#fff;
+  border:1px solid #000;
+}
+
 
 /* ---------- コードの作例 ----------
    20250924coping のように、本文がコードを引用している記事で使う。
